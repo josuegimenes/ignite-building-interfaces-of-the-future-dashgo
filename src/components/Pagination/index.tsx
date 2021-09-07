@@ -5,6 +5,7 @@ interface PaginationProps {
   totalCountOfRegisters: number;
   registersPerPage?: number;
   currentPage?: number;
+  siblingsCount?: number;
   onPageChange: (page: number) => void;
 }
 
@@ -22,7 +23,8 @@ export function Pagination({
   registersPerPage = 10,
   currentPage = 1,
   onPageChange,
-}: PaginationProps) {
+  siblingsCount = 1,
+}: PaginationProps): JSX.Element {
   const lastPage = Math.floor(totalCountOfRegisters / registersPerPage);
 
   const previousPages = currentPage > 1
